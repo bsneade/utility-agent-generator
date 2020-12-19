@@ -1,12 +1,20 @@
 {
   "name": "utility-agent-generator",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Generate datasets using a utility agent",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "pretest": "npm run lint"
   },
-  "author": "",
+  "author": "Brad Sneade",
   "license": "MIT",
   "dependencies": {
     "utility-agent": "^0.9.10"
